@@ -20,7 +20,7 @@ onMounted(async () => {
 <template>
   <Layouts title="Daftar Film">
     <div class="">
-      <div v-if="data.length" class="space-y-3">
+      <div v-if="data.length" class="!space-y-3">
         <div v-for="(item, index) in data" :key="index">
           <div v-if="item.mimeType == 'video/mp4'">
             <router-link
@@ -31,7 +31,7 @@ onMounted(async () => {
                   videoId: item.id,
                 },
               }"
-              class="w-full rounded-lg border border-gray-700 py-1 px-3 bg-gray-800 text-white flex items-center gap-3"
+              class="w-full rounded-lg border !border-gray-700 py-1 px-3 !bg-gray-800 !text-white flex items-center gap-3"
             >
               <svg
                 viewBox="0 0 1024 1024"

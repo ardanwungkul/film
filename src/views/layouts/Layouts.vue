@@ -6,7 +6,7 @@ const props = defineProps({
 })
 </script>
 <template>
-  <div class="bg-gray-900 min-h-screen w-full p-10">
+  <div class="bg-gray-900 min-h-screen w-full !p-10">
     <div class="flex items-center gap-3 py-3">
       <RouterLink v-if="route.name !== 'home'" :to="{ name: 'home' }">
         <svg viewBox="0 0 16 16" fill="none" class="w-5" xmlns="http://www.w3.org/2000/svg">

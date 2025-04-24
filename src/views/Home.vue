@@ -15,12 +15,27 @@ onMounted(async () => {
 
   data.value = response.data.files
 })
+
+const modalStatus = ref(true)
 </script>
 
 <template>
+  <v-dialog v-model="modalStatus">
+    <template v-slot:default="{ isActive }">
+      <v-card v-bind:image="'/public/assets/images/photo.jpg'" class="!p-5 !rounded-lg">
+        <div class="backdrop-blur-sm text-white px-5 py-2 !rounded-lg text-sm">
+          <p class="text-center">Hii !!, Selamat Datangg Sayangg</p>
+          <p class="text-center">Selamatt nonton film yaaa cintakuuuu</p>
+          <p class="text-center">Enjoyy Your time Baee</p>
+          <p class="text-center">I Love Youuu ♡✧˚ ༘ ⋆｡♡˚</p>
+        </div>
+        <img src="" alt="" />
+      </v-card>
+    </template>
+  </v-dialog>
   <Layouts title="Daftar Film">
     <div>
-      <div v-if="data.length" class="space-y-3">
+      <div v-if="data.length" class="!space-y-3">
         <div v-for="(item, index) in data" :key="index">
           <div v-if="item.mimeType == 'application/vnd.google-apps.folder'">
             <router-link
@@ -30,7 +45,7 @@ onMounted(async () => {
                   id: item.id,
                 },
               }"
-              class="w-full rounded-lg border border-gray-700 py-1 px-3 bg-gray-800 text-white flex items-center gap-3"
+              class="w-full rounded-lg border !border-gray-700 !py-1 !px-3 !bg-gray-800 !text-white flex items-center gap-3"
             >
               <svg
                 version="1.1"
@@ -98,20 +113,6 @@ onMounted(async () => {
       <div v-else>
         <p class="text-white text-center">Loading.....</p>
       </div>
-      <!-- <div v-if="data.length">
-      <div v-for="file in data" :key="file.id" class="mb-4">
-        <p class="font-semibold">{{ file.name }}</p>
-        <iframe
-          :src="`https://drive.google.com/file/d/${file.id}/preview`"
-          width="100%"
-          height="360"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
-    <div v-else>
-      <p>Loading atau tidak ada file...</p>
-    </div> -->
     </div>
   </Layouts>
 </template>
