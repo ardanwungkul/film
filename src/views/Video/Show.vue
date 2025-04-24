@@ -23,7 +23,7 @@ onMounted(async () => {
     <div class="flex items-center justify-center">
       <iframe
         :src="`https://drive.google.com/file/d/${data.id}/preview`"
-        class="h-60 aspect-video rounded-lg"
+        class="w-full aspect-video rounded-lg"
         allowfullscreen
       >
       </iframe>
