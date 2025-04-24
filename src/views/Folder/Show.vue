@@ -14,7 +14,7 @@ onMounted(async () => {
     `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}`,
   )
 
-  data.value = response.data.files
+  data.value = response.data.files.sort((a, b) => a.name.localeCompare(b.name))
 })
 </script>
 <template>
