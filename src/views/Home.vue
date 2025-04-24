@@ -22,7 +22,7 @@ const modalStatus = ref(true)
 <template>
   <v-dialog v-model="modalStatus">
     <template v-slot:default="{ isActive }">
-      <v-card v-bind:image="'/public/assets/images/photo.jpg'" class="!p-5 !rounded-lg">
+      <v-card v-bind:image="'/assets/images/photo.jpg'" class="!p-5 !rounded-lg">
         <div class="backdrop-blur-sm text-white px-5 py-2 !rounded-lg text-sm">
           <p class="text-center">Hii !!, Selamat Datangg Sayangg</p>
           <p class="text-center">Selamatt nonton film yaaa cintakuuuu</p>
